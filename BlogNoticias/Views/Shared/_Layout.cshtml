@@ -79,7 +79,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Clean Blog - Start Bootstrap Theme</title>
+    <title>@ViewData["Title"] - BlogNoticias</title>
     <!-- Bootstrap core CSS -->
     <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom fonts for this template -->
@@ -104,13 +104,13 @@
                         <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a asp-area="" class="nav-link" asp-controller="About" asp-action="Index">About</a>
+                        <a asp-area="" class="nav-link" asp-controller="Home" asp-action="About">About</a>
                     </li>
                     <li class="nav-item">
-                        <a asp-area="" class="nav-link" asp-controller="Post" asp-action="Index">Sample Post</a>
+                        <a asp-area="" class="nav-link" asp-controller="Home" asp-action="Post">Sample Post</a>
                     </li>
                     <li class="nav-item">
-                        <a asp-area="" class="nav-link" asp-controller="Contacto" asp-action="Index">Contact</a>
+                        <a asp-area="" class="nav-link" asp-controller="Home" asp-action="Contact">Contact</a>
                     </li>
                 </ul>
             </div>
