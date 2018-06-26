@@ -1,4 +1,5 @@
-﻿@{
+﻿@model EnvioDeMail
+@{
     ViewData["Title"] = "Contact";
 }
 <!-- Page Header -->
@@ -9,7 +10,7 @@
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="page-heading">
                     <h1>Contact Me</h1>
-                    <span class="subheading">Have questions? I have answers.</span>
+                    <span class="subheading">@ViewData["Message"]</span>
                 </div>
             </div>
         </div>
@@ -23,41 +24,54 @@
             <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
             <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
             <!-- To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
-            <form name="sentMessage" id="contactForm" novalidate>
+            <form method="POST">
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
-                        <label>Name</label>
-                        <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
-                        <p class="help-block text-danger"></p>
+                        <label asp-for="Name">Name</label>
+                        <input asp-for="Name" type="text"  class="form-control" placeholder="Name" name="name" id="name" data-validation-required-message="Please enter your name.">
+                        <p class="help-block text-danger">
+                            <span asp-validation-for="Name"
+                                  class="text-muted"></span>
+                        </p>
                     </div>
                 </div>
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
-                        <label>Email Address</label>
-                        <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
-                        <p class="help-block text-danger"></p>
+                        <label asp-for="Email">Email Address</label>
+                        <input asp-for="Email" type="email"  class="form-control" placeholder="Email Address" name="email" id="email" data-validation-required-message="Please enter your email address.">
+                        <p class="help-block text-danger">
+                            <span asp-validation-for="Email"
+                                  class="text-muted"></span>
+                        </p>
                     </div>
                 </div>
                 <div class="control-group">
                     <div class="form-group col-xs-12 floating-label-form-group controls">
-                        <label>Phone Number</label>
-                        <input type="tel" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">
-                        <p class="help-block text-danger"></p>
+                        <label asp-for="Phone">Phone Number</label>
+                        <input asp-for="Phone" type="tel"  class="form-control" placeholder="Phone Number" id="phone" name="phone" data-validation-required-message="Please enter your phone number.">
+                        <p class="help-block text-danger">
+                            <span asp-validation-for="Phone"
+                                  class="text-muted"></span>
+                        </p>
                     </div>
                 </div>
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
-                        <label>Message</label>
-                        <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
-                        <p class="help-block text-danger"></p>
+                        <label asp-for="Message">Message</label>
+                        <textarea asp-for="Message" rows="5"  class="form-control" placeholder="Message" id="message" name="message" data-validation-required-message="Please enter a message."></textarea>
+                        <p class="help-block text-danger">
+                            <span asp-validation-for="Message"
+                                  class="text-muted"></span>
+                        </p>
                     </div>
                 </div>
                 <br>
                 <div id="success"></div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary" id="sendMessageButton">Send</button>
+                    <button type="submit" class="btn btn-primary">Send</button>
                 </div>
-            </form>
+            </form>   
+            <h1>@ViewBag.Message</h1>
         </div>
     </div>
 </div>
