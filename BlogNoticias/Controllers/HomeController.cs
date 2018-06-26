@@ -39,16 +39,18 @@ namespace BlogNoticias.Controllers
                     MailMessage msz = new MailMessage();
                     msz.From = new MailAddress(en.Email);// email del formulario
                                                          
-                    msz.To.Add("correo2@yahoo.com"); //correo que recive el mensaje
+                    msz.To.Add("xxxx60@yahoo.com"); //correo que recive el mensaje
                     msz.Subject = "nuevo contacto";// asunto del mensaje
 
                     msz.IsBodyHtml = true;// habilito formato html para que quede flama el correo
                     msz.Body = $@"
-                               Email:{en.Email}<br>
-                               Nombre:{en.Name}<br>
-                               Nuemero telefonico:{en.Phone}<br><hr>
-                               Consulta:{en.Message}
-                               <img src={"http://www.theclinic.cl/wp-content/uploads/2016/10/negro11.jpg "} />
+                               <img src={"https://voluntasvincit.com/wp-content/uploads/2018/02/contacto.png "} />
+
+                               <strong>Email: </strong>{en.Email}<br>
+                               <strong>Nombre: </strong>{en.Name}<br>
+                               <strong>Telefono: </strong>{en.Phone}<br><hr>
+                              {en.Message}
+<img src={"https://pgroene.files.wordpress.com/2018/02/asp-net-core-logo-1.png?w=664"}/>
                                ";// concatenacion del formulario contact
                     SmtpClient smtp = new SmtpClient();
 
@@ -57,7 +59,8 @@ namespace BlogNoticias.Controllers
                     smtp.Port = 587;// puerto varia depende el correo
 
                     smtp.Credentials = new System.Net.NetworkCredential
-                    ("correo@gmail.com", "xxxxxxx");// correo que va a enviar el mensaje y su contraseña gmail
+
+                       ("xxxxxxx@gmail.com", "xxxxxxxx");// correo que va a enviar el mensaje y su contraseña gmail
 
                     smtp.EnableSsl = true;
 
