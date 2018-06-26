@@ -64,7 +64,7 @@ namespace BlogNoticias.Controllers
                     smtp.Send(msz);
 
                     ModelState.Clear();
-                    ViewData["Message"] = "GRACIAS POR CONTACTARSE"; // envio un mensaje en el header de la vista 
+                    ViewData["Message"] = "GRACIAS POR CONTACTARSE "; // envio un mensaje en el header de la vista 
 
                     
                 }
