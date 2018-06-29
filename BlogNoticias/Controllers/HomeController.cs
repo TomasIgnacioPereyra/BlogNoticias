@@ -139,7 +139,7 @@ namespace BlogNoticias.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Panel([Bind("Id,Titulo,Subtitulo,Autor,Fecha")] Publicacion publicacion)
+        public async Task<IActionResult> Panel([Bind("Id,Autor,Cuerpo,Fecha,Subtitulo,Titulo")] Publicacion publicacion)
         {
             if (ModelState.IsValid)
             {

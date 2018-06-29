@@ -17,6 +17,7 @@ namespace BlogNoticias.Models
 
         public DateTime Fecha { get; set; }
 
+        public string Cuerpo { set; get; }
 
     }
 }
