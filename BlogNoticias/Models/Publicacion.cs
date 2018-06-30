@@ -11,7 +11,7 @@ namespace BlogNoticias.Models
         public int Id { get; set; }
 
         [Required]
-        [StringLength(50, MinimumLength = 4)]
+        [StringLength(100 ,MinimumLength = 4)]
         public string Titulo { get; set; }
 
         [Required]
@@ -25,7 +25,7 @@ namespace BlogNoticias.Models
         public DateTime Fecha { get; set; }
 
         [Required]
-        [StringLength(5000, MinimumLength = 100)]
+        [StringLength(10000, MinimumLength = 10)]
         public string Cuerpo { set; get; }
 
     }
