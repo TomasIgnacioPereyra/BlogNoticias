@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<BlogNoticias.Models.Publicacion>
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Inicio";
 }
 <header class="masthead" style="background-image: url('/images/home-bg.jpg')">
     <div class="overlay"></div>
@@ -8,8 +8,8 @@
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="site-heading">
-                    <h1>Clean Blog</h1>
-                    <span class="subheading">A Blog Theme by Start Bootstrap</span>
+                    <h1>BlogNoticias</h1>
+                    <span class="subheading">Pagina de noticias informativas</span>
                 </div>
             </div>
         </div>
@@ -43,11 +43,10 @@
                     <hr>
                 }
             
-            <hr>
 
             <!-- Pager -->
             <div class="clearfix">
-                <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+                <a class="btn btn-primary float-right" asp-controller="Home" asp-action="Panel">Crear una noticia &rarr;</a>
             </div>
         </div>
     </div>

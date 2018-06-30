@@ -4,31 +4,33 @@
     ViewData["Title"] = "Panel";
 }
 
-<div class="row " style="background-color:darkslateblue;padding-top:50px;">
+<div class="row " style="background-color:darkslategrey;padding-top:80px; ">
 
 
-    <div class="col-md-4 container">
-        <form asp-action="Panel">
+    <div class="col-md-6  container">
+        <form asp-action="Panel" style="background-color:#dddddd;padding:10px">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Titulo" class="control-label"></label>
-                <input asp-for="Titulo" class="form-control" />
+                <input asp-for="Titulo" class="form-control" placeholder="Ingrese el titulo" />
                 <span asp-validation-for="Titulo" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Subtitulo" class="control-label"></label>
-                <input asp-for="Subtitulo" class="form-control" />
+                <input asp-for="Subtitulo" class="form-control" placeholder="Ingrese el sutitulo" />
                 <span asp-validation-for="Subtitulo" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Autor" class="control-label"></label>
-                <input asp-for="Autor" class="form-control" />
-                <span asp-validation-for="Autor" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Fecha" class="control-label"></label>
-                <input asp-for="Fecha" class="form-control" />
-                <span asp-validation-for="Fecha" class="text-danger"></span>
+            <div class="row">
+                <div class="col-md-6">
+                    <label asp-for="Autor" class="control-label"></label>
+                    <input asp-for="Autor" class="form-control" placeholder="Ingrese el autor" />
+                    <span asp-validation-for="Autor" class="text-danger"></span>
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="Fecha" class="control-label"></label>
+                    <input asp-for="Fecha" type="date" class="form-control" />
+                    <span asp-validation-for="Fecha" class="text-danger"></span>
+                </div>
             </div>
             <div class="form-group">
                 <label asp-for="Cuerpo">Mensaje de Página</label>
@@ -38,7 +40,7 @@
             </div>
 
             <div class="form-group">
-                <input type="submit" value="Publicar" class="btn btn-default" />
+                <input type="submit" value="Publicar" class="btn btn-success" />
             </div>
         </form>
     </div>
