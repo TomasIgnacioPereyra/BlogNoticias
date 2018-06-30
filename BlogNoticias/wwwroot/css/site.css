@@ -1,1 +1,6 @@
 ﻿.text-muted{color:red;}
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
